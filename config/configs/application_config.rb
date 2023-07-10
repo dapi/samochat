@@ -13,7 +13,9 @@ class ApplicationConfig < Anyway::Config
     bot_token: '',
     bot_username: '',
     sidekiq_redis_url: 'redis://localhost:6379/0',
-    redis_cache_store_url: 'redis://localhost:6379/2'
+    redis_cache_store_url: 'redis://localhost:6379/2',
+    cloudpayments_public_key: 'pk_d22b27d2627cb3c53f2cb25e650a3', # Тестовый
+    cloudpayments_secret_key: ''
   )
 
   class << self

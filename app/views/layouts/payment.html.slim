@@ -1,0 +1,11 @@
+doctype html
+- layout_width = 1200
+html lang=I18n.locale
+  head
+    = render 'head'
+  body
+    main.container.px-3.py-5[style="max-width: #{layout_width}px"]
+      = yield
+
+    = render 'footer', width: layout_width
+    = render 'flashes'

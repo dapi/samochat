@@ -20,6 +20,16 @@ Rails.application.routes.draw do
 
     root to: 'memberships#index'
   end
+
+  resource :account
+  resources :invoices
+  resources :payments, only: %(new create) do
+    member do
+      get :success
+      post :post3ds
+    end
+  end
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

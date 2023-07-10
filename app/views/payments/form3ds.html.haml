@@ -1,0 +1,7 @@
+%form{action: resp.acs_url, method: :post, name: :post3ds}
+  = hidden_field_tag 'PaReq', resp.pa_req
+  = hidden_field_tag 'MD', resp.transaction_id
+  = hidden_field_tag 'TermUrl', term_url
+:javascript
+  window.onload = submitForm;
+  function submitForm() { post3ds.submit(); }
