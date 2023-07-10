@@ -7,7 +7,7 @@
 class Invoice < ApplicationRecord
   belongs_to :account
 
-  validates :amount, numeric: { greater_then: 0 }
+  validates :amount, numericality: { greater_than: 0 }
 
   def fully_paid?
     fully_paid_at?
