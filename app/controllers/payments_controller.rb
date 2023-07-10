@@ -12,10 +12,11 @@ class PaymentsController < ApplicationController
     if invoice.fully_paid?
       redirect_to invoice_path(invoice)
     else
-      render locals: {
-        form: CloudPaymentsForm.new,
-        invoice:
-      }
+      render 'new',
+        locals: {
+          form: CloudPaymentsForm.new(recurrent: true),
+          invoice:
+        }
     end
   end
 
@@ -71,7 +72,7 @@ class PaymentsController < ApplicationController
     Bugsnag.notify e
     flash.now[:error] = e.message
 
-    render 'new', locals: { form: CloudPaymentsForm.new, invoice: }
+    new
   end
 
   private
