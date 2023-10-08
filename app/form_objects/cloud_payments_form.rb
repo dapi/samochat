@@ -7,14 +7,10 @@ class CloudPaymentsForm
   include ActiveModel::Model
 
   attr_accessor :name
-  attr_accessor :recurrent
-  attr_accessor :cryptogram_packet
+  attr_accessor :recurrent, :cryptogram_packet, :expDateMonth, :expDateYear, :cvv
 
   # Реально эти атрибуты никода не передаются используются только для генерации формы
   attr_accessor :cardNumber
-  attr_accessor :expDateMonth
-  attr_accessor :expDateYear
-  attr_accessor :cvv
 
   validates :name, presence: true
   validates :cryptogram_packet, presence: true

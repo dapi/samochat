@@ -13,10 +13,10 @@ class PaymentsController < ApplicationController
       redirect_to invoice_path(invoice)
     else
       render 'new',
-        locals: {
-          form: CloudPaymentsForm.new(recurrent: true),
-          invoice:
-        }
+             locals: {
+               form: CloudPaymentsForm.new(recurrent: true),
+               invoice:
+             }
     end
   end
 
