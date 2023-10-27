@@ -4,14 +4,8 @@
 # model remove the "{}" from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: 
-  account: one
+bob: 
+  account: bob
   amount: 99.99
   token: token1
-  dump: {}
-
-two:
-  token: token2
-  account: two
-  amount: 99.99
   dump: {}
