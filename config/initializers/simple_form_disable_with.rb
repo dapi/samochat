@@ -13,7 +13,7 @@ module DisableDoubleClickOnSimpleForms
       options[:data] ||= {}
       options[:data][:disable_with] ||= I18n.t('helpers.disable_with')
     end
-    super(field, options)
+    super
   end
 end
 

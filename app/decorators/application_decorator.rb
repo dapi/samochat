@@ -13,7 +13,7 @@ class ApplicationDecorator < Draper::Decorator
   end
 
   def self.table_th_class(column)
-    return 'text-right' if TEXT_RIGHT.include? column.to_sym
+    'text-right' if TEXT_RIGHT.include? column.to_sym
   end
 
   def self.table_td_class(column)

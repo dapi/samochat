@@ -160,12 +160,12 @@ gem 'administrate', '~> 0.19.0'
 
 gem 'administrate-field-jsonb', '~> 0.4.6'
 
-gem "posthog-ruby", "~> 2.5"
+gem 'posthog-ruby', '~> 2.5'
 
-gem "base64", "~> 0.2.0"
+gem 'base64', '~> 0.2.0'
 
-gem "bigdecimal", "~> 3.1"
+gem 'bigdecimal', '~> 3.1'
 
-gem "mutex_m", "~> 0.3.0"
+gem 'mutex_m', '~> 0.3.0'
 
-gem "csv", "~> 3.3"
+gem 'csv', '~> 3.3'

@@ -8,7 +8,7 @@ module ApplicationHelper
   end
 
   def default_tariff_id
-    @default_tariff_id ||= Tariff.where(is_default: true).take.id || raise('No default tariff found')
+    @default_tariff_id ||= Tariff.find_by(is_default: true).id || raise('No default tariff found')
   end
 
   def setup_checkbox(flag, tooltip: nil)
@@ -63,9 +63,7 @@ module ApplicationHelper
     []
   end
 
-  def app_title
-    ApplicationConfig.app_title
-  end
+  delegate :app_title, to: :ApplicationConfig
 
   def back_link(url = nil)
     link_to "&larr; #{t('helpers.back')}".html_safe, url || root_path

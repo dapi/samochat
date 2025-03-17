@@ -35,7 +35,7 @@ module ProjectBot
 
   def bot_token=(value)
     @bot = nil
-    super value
+    super
   end
 
   def fetch_chat_info

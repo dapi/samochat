@@ -8,7 +8,7 @@ namespace :telik do
     task poller_all: :environment do
       threads = Project
         .where.not(bot_token: nil)
-        .each
+        .find_each
         .map do |project|
           system(
             {

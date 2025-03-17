@@ -132,7 +132,7 @@ module Telegram
     # Например спрашивать в случае если совсем не давно ему кто-то отвечал
     def last_used_visitor
       if session[:project_id] && (project = Project.find_by(id: session[:project_id]))
-        visitor = telegram_user.visitors.where(project_id: project.id).take
+        visitor = telegram_user.visitors.find_by(project_id: project.id)
       end
       visitor ||
         telegram_user.visitors.where.not(operator_replied_at: nil).order(:operator_replied_at).last ||

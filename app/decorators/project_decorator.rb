@@ -21,9 +21,9 @@ class ProjectDecorator < ApplicationDecorator
 
   def title
     object.name
-    #- if project.host.present?
+    # - if project.host.present?
     #= link_to project.host, project.url, target: '_blank'
-    #- else
+    # - else
     # i Не установлено
   end
 

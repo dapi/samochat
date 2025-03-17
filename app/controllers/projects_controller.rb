@@ -94,8 +94,7 @@ class ProjectsController < ApplicationController
       .projects
       .where(host_confirmed_at: nil)
       .where.not(telegram_group_id: nil)
-      .where(bot_token: nil)
-      .take
+      .find_by(bot_token: nil)
   end
 
   def next_step_redirect_url(project)
