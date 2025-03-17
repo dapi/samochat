@@ -5,7 +5,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.2.1'
+ruby '3.4.2'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0'
@@ -35,7 +35,7 @@ gem 'jbuilder'
 gem 'hiredis'
 gem 'redis', '~> 4.0'
 
-gem 'sidekiq', '>= 7.1.3'
+gem 'sidekiq', '~> 7.1.3'
 # gem 'sidekiq-cron'
 gem 'sidekiq-failures'
 gem 'sidekiq-reset_statistics'
@@ -161,3 +161,11 @@ gem 'administrate', '~> 0.19.0'
 gem 'administrate-field-jsonb', '~> 0.4.6'
 
 gem "posthog-ruby", "~> 2.5"
+
+gem "base64", "~> 0.2.0"
+
+gem "bigdecimal", "~> 3.1"
+
+gem "mutex_m", "~> 0.3.0"
+
+gem "csv", "~> 3.3"

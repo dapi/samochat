@@ -1,0 +1,23 @@
+{
+  "name": "samochat",
+  "version": "1.0.0",
+  "description": "[![Ruby on Rails CI](https://github.com/dapi/telik/actions/workflows/rubyonrails.yml/badge.svg)](https://github.com/dapi/telik/actions/workflows/rubyonrails.yml) [![Deploy](https://github.com/dapi/telik/actions/workflows/deploy.yml/badge.svg)](https://github.com/dapi/telik/actions/workflows/deploy.yml)",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dapi/samochat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dapi/samochat/issues"
+  },
+  "homepage": "https://github.com/dapi/samochat#readme"
+}
