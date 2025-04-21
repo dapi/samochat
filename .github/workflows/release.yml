@@ -1,0 +1,13 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  release:
+    uses: safeblock-com/github-actions/.github/workflows/docker-build.yml@docker-build
+    secrets:
+      token: ${{ secrets.GITHUB_TOKEN }}
