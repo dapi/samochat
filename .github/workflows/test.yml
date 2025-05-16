@@ -38,9 +38,9 @@ jobs:
           POSTGRES_PASSWORD: postgres
     env:
       RAILS_ENV: test
-      TELIK_DATABASE_HOST: 127.0.0.1
-      TELIK_DATABASE_USERNAME: postgres
-      TELIK_DATABASE_PASSWORD: postgres
+      SAMOCHAT_DATABASE_HOST: 127.0.0.1
+      SAMOCHAT_DATABASE_USERNAME: postgres
+      SAMOCHAT_DATABASE_PASSWORD: postgres
       # DATABASE_URL: "postgres://rails:password@localhost:5432/rails_test"
     steps:
       - name: Checkout code
