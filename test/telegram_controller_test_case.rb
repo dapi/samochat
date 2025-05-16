@@ -19,7 +19,7 @@ class TelegramControllerTestCase < ActiveSupport::TestCase
   def sendMessageText
     @bot.requests.fetch(:sendMessage).first.fetch(:text)
   end
-  # rubocop:enable Naming/MethodName:
+  # rubocop:enable Naming/MethodName
 
   # Matcher to check response. Make sure to define `let(:chat_id)`.
   def respond_with_message(expected = Regexp.new(''))
