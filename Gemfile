@@ -181,4 +181,4 @@ gem 'benchmark', '~> 0.4.0'
 
 gem 'fiddle', '~> 1.1'
 
-gem "concurrent-ruby", "~> 1.3"
+gem 'concurrent-ruby', '~> 1.3'
