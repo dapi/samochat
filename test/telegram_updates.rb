@@ -87,12 +87,12 @@ TELEGRAM_UPDATES = {
   # "left_chat_participant":{
   # "id":6189190373,
   # "is_bot":true,
-  # "first_name":"Telik Chat Bot",
+  # "first_name":"Samochat Chat Bot",
   # "username":"telik_chat_bot"
   # },"left_chat_member":{
   # "id":6189190373,
   # "is_bot":true,
-  # "first_name":"Telik Chat Bot",
+  # "first_name":"Samochat Chat Bot",
   # "username":"telik_chat_bot"
   # }}
 

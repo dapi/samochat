@@ -12,8 +12,8 @@ namespace :telik do
         .map do |project|
           system(
             {
-              'TELIK_BOT_TOKEN' => project.bot_token,
-              'TELIK_BOT_USERNAME' => project.bot_username
+              'SAMOCHAT_BOT_TOKEN' => project.bot_token,
+              'SAMOCHAT_BOT_USERNAME' => project.bot_username
             },
             'rake telegram:bot:poller'
           )
