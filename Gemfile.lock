@@ -593,6 +593,7 @@ DEPENDENCIES
   capistrano-systemd-multiservice!
   capistrano3-puma!
   capybara
+  concurrent-ruby (~> 1.3)
   csv (~> 3.3)
   debug
   dotenv (~> 2.8)
