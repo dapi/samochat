@@ -17,7 +17,7 @@ class TelegramAtcionsMessage < TelegramControllerTestCase
 
   test 'сообщение в general topic не определенному боту' do
     dispatch TELEGRAM_UPDATES[:general_topic_message]
-    assert_includes sendMessageText, 'Кажись вы меня не туда добавили'
+    assert_includes sendMessageText, 'Кажись Вы меня не туда добавили, я Вас не знаю.'
   end
 
   test 'сообщение в general topic еще в одну группу с проектом к которому подключен бот' do
