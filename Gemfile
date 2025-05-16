@@ -85,6 +85,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'abbrev'
   gem 'bcrypt_pbkdf'
   gem 'ed25519'
   gem 'foreman'
