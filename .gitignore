@@ -36,5 +36,6 @@ cert.pem
 key.pem
 
 *.sql
+.env.*
 
 /node_modules

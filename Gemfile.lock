@@ -151,6 +151,7 @@ GEM
     base64 (0.2.0)
     bcrypt (3.1.18)
     bcrypt_pbkdf (1.1.0)
+    benchmark (0.4.0)
     bigdecimal (3.1.9)
     bindex (0.8.1)
     bootsnap (1.18.4)
@@ -222,6 +223,7 @@ GEM
       activesupport (>= 5.0)
       request_store (>= 1.0)
       ruby2_keywords
+    drb (2.2.1)
     dry-core (1.0.0)
       concurrent-ruby (~> 1.0)
       zeitwerk (~> 2.6)
@@ -249,6 +251,7 @@ GEM
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
     ffi (1.15.5)
+    fiddle (1.1.8)
     foreman (0.87.2)
     formatador (1.1.0)
     geocoder (1.8.1)
@@ -315,6 +318,7 @@ GEM
     listen (3.8.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
+    logger (1.7.0)
     loofah (2.21.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -370,6 +374,7 @@ GEM
       rack (>= 1.2, < 4)
       snaky_hash (~> 2.0)
       version_gem (~> 1.1)
+    ostruct (0.6.1)
     parallel (1.23.0)
     parser (3.2.2.1)
       ast (~> 2.4.1)
@@ -563,6 +568,7 @@ DEPENDENCIES
   anyway_config
   base64 (~> 0.2.0)
   bcrypt_pbkdf
+  benchmark (~> 0.4.0)
   bigdecimal (~> 3.1)
   bootsnap
   bootstrap (~> 5.1.3)
@@ -589,8 +595,10 @@ DEPENDENCIES
   dotenv (~> 2.8)
   dotenv-rails
   draper
+  drb (~> 2.2)
   ed25519
   env-tweaks!
+  fiddle (~> 1.1)
   foreman
   geocoder (~> 1.8)
   guard
@@ -604,9 +612,11 @@ DEPENDENCIES
   jbuilder
   kaminari (~> 1.2)
   listen
+  logger (~> 1.7)
   mutex_m (~> 0.3.0)
   nanoid (~> 2.0)
   non-digest-assets (~> 2.2)
+  ostruct (~> 0.6.1)
   pg (~> 1.1)
   posthog-ruby (~> 2.5)
   pry-byebug
