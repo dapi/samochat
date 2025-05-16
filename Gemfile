@@ -170,12 +170,12 @@ gem 'mutex_m', '~> 0.3.0'
 
 gem 'csv', '~> 3.3'
 
-gem "ostruct", "~> 0.6.1"
+gem 'ostruct', '~> 0.6.1'
 
-gem "drb", "~> 2.2"
+gem 'drb', '~> 2.2'
 
-gem "logger", "~> 1.7"
+gem 'logger', '~> 1.7'
 
-gem "benchmark", "~> 0.4.0"
+gem 'benchmark', '~> 0.4.0'
 
-gem "fiddle", "~> 1.1"
+gem 'fiddle', '~> 1.1'
