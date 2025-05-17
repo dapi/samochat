@@ -8,9 +8,10 @@ class User < ApplicationRecord
   strip_attributes
   authenticates_with_sorcery!
 
-  has_many :memberships, dependent: :delete_all
-  has_many :projects, through: :memberships
   belongs_to :telegram_user
+  has_many :memberships, dependent: :delete_all
+  has_many :projects, through: :memberships, dependent: :delete_all
+  has_one :account, inverse_of: :owner, dependent: :delete
 
   delegate :first_name, :public_name, :telegram_nick, to: :telegram_user
 

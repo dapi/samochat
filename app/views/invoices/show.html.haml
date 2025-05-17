@@ -1,0 +1,12 @@
+.row
+  .col-lg-8.col-lg-offset-3
+    = link_to t('system.invoices.test_cards'), 'https://cloudpayments.ru/Docs/Test', target: '_blank' if Rails.env.development?
+    %h2= t('system.invoices.number', number: invoice.number)
+    %div= invoice.title
+    %div= invoice.buyer_name
+    %div
+      = simple_format invoice.details
+    - if invoice.paid?
+      %h3= t('system.invoices.paid')
+    - else
+      = render 'system/invoices/payment_form', form: form, invoice: invoice

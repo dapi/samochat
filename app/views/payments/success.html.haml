@@ -1,0 +1,29 @@
+.form-flatbox
+  %h3
+    = t('system.payments.success.title')
+  %br
+  = link_to t('system.payments.success.back_to_shop'), return_url, class: 'btn btn-success'
+
+- category = t('system.payments.success.kiiiosk')
+- category << " (#{Rails.env})" unless Rails.env.production?
+
+- sku = t('system.payments.success.tariff')
+- name = t('system.payments.success.tariff_payment')
+
+:javascript
+  window.dataLayer = window.dataLayer || []
+  dataLayer.push({
+   'userId': #{gtm_userId(vendor).to_json.html_safe}
+  });
+  dataLayer.push({
+    'transactionId': #{transaction_id.to_s.to_json.html_safe},
+    'transactionTotal': #{amount},
+    'transactionProducts': [{
+        'sku': #{sku.to_json.html_safe},
+        'name': #{name.to_json.html_safe},
+        'category': #{category.to_json.html_safe},
+        'price': #{amount},
+        'quantity': 1
+     }]
+  });
+

@@ -8,6 +8,10 @@ Rails/I18nLocaleTexts:
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
 
+Naming/MethodName:
+ Exclude:
+   - app/form_objects/*
+
 AllCops:
   NewCops: enable
   TargetRubyVersion: 3.2

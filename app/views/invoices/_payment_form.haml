@@ -1,0 +1,31 @@
+= render 'cloud_payments_checkout', public_id: Secrets.cloudpayments.public_key
+= simple_form_for form, url: pay_system_payment_url(invoice), html: { data: { cp_payment_form: true }, autocomplete: :off }, wrapper_mappings: { boolean: :vertical_boolean } do |f|
+  .row
+    .col-xs-12.col-lg-9
+      .p-m
+        = f.error_notification
+
+        %h3
+          = t('system.invoices.amount').html_safe
+          %b= money_balance invoice.amount
+        %br
+        .row
+          .col-xs-8
+            = f.input :cardNumber, input_html: {name: nil, data: {cp: :cardNumber}}
+          .col-xs-4
+            .pull-right{style: 'margin-top: 27px'}= image_tag 'visa_mastercard.png', skip_pipeline: true
+        = f.input :name
+        .row
+          .col-xs-4
+            = f.input :expDateMonth, input_html: {name: nil, data: {cp: :expDateMonth}}, collection: expire_months_as_options, include_blank: '--'
+          .col-xs-4
+            = f.input :expDateYear, input_html: {name: nil, data: {cp: :expDateYear}}, collection: expire_years_as_options, include_blank: '----'
+          .col-xs-4
+            = f.input :cvv, as: :password, input_html: {name: nil, data: {cp: :cvv}}
+        = f.input :cryptogram_packet, as: :hidden, input_html: { data: { cryptogram_packet: true } }
+        = f.input :recurrent, as: :boolean
+        %hr
+  .row
+    .col-xs-12.col-lg-9
+      = f.submit t('system.invoices.pay'), class: 'btn btn-primary'
+      .pull-right(style='margin-top: 1em')= link_to t('system.invoices.pdf'), system_invoice_path(invoice.id, format: :pdf), target: '_blank'
