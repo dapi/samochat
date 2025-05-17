@@ -12,7 +12,7 @@ LATEST_INFRA_RUN_ID=`${INFRA_GH} run list --workflow=${WORKFLOW}  -L 3 -e workfl
 LATEST_RUN_ID=`${GH} run list --workflow=release.yml -L 3 -e workflow_dispatch --json databaseId -q.[0].databaseId`
 
 # Default target
-release: patch-release deploy-capistrano
+release: patch-release 
 
 patch-release-and-deploy: patch-release watch deploy sleep infra-watch
 
