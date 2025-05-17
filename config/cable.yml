@@ -1,11 +1,10 @@
 development:
-  adapter: redis
-  url: redis://localhost:6379/1
+  adapter: postgresql
+  channel_prefix: samochat_development
 
 test:
   adapter: test
 
 production:
-  adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
-  channel_prefix: telik_production
+  adapter: postgresql
+  channel_prefix: samochat_production
