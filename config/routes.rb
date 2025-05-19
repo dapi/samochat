@@ -6,19 +6,25 @@ require 'custom_telegram_bot_middleware'
 require 'admin_restriction'
 
 Rails.application.routes.draw do
-  namespace :admin do
-    resources :memberships
-    resources :messages
-    resources :projects
-    resources :tariffs
-    resources :telegram_events
-    resources :telegram_users
-    resources :users
-    resources :visits
-    resources :visitors
-    resources :visitor_sessions
+  # TODO: constraint superadmin only
+  constraints subdomain: "admin" do
+    constraints AdminConstraint do
+      mount SolidQueueDashboard::Engine, at: "/solid-queue"
+      scope module: :admin, as: :admin do
+        resources :memberships
+        resources :messages
+        resources :projects
+        resources :tariffs
+        resources :telegram_events
+        resources :telegram_users
+        resources :users
+        resources :visits
+        resources :visitors
+        resources :visitor_sessions
 
-    root to: 'memberships#index'
+        root to: 'memberships#index'
+      end
+    end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -55,14 +61,5 @@ Rails.application.routes.draw do
     resources :visitors, only: %i[index show], controller: 'projects/visitors'
   end
 
-  require 'sidekiq/web'
-
-  get '/sidekiq-stats' => proc {
-                            [200, { 'Content-Type' => 'application/json' },
-                             [{ stats: Sidekiq::Stats.new, queues: Sidekiq::Stats.new.queues }.to_json]]
-                          }
-
-  Sidekiq::Web.use AdminRestriction
-  mount Sidekiq::Web => '/sidekiq'
   match '*anything', to: 'application#not_found', via: %i[get post], constraints: { format: :html }
 end

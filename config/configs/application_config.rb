@@ -5,11 +5,11 @@
 # Base class for application config classes
 class ApplicationConfig < Anyway::Config
   TELEGRAM_LINK_PREFIX = 'https://t.me/'
-  env_prefix :telik
+  env_prefix :samochat
   attr_config(
     app_title: 'SamochatBot',
     host: 'localhost',
-    protocol: 'http',
+    protocol: 'https',
     bot_token: '',
     bot_username: '',
     sidekiq_redis_url: 'redis://localhost:6379/0',

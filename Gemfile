@@ -35,12 +35,13 @@ gem 'jbuilder'
 gem 'hiredis'
 gem 'redis', '~> 4.0'
 
-gem 'sidekiq', '~> 7.1.3'
-# gem 'sidekiq-cron'
-gem 'sidekiq-failures'
-gem 'sidekiq-reset_statistics'
-# gem 'sidekiq-status'
-# gem 'sidekiq-unique-jobs'
+gem "solid_queue_dashboard", "~> 0.2.0"
+# Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
+gem "solid_cache"
+gem "solid_queue"
+gem "solid_cable"
+
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 

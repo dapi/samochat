@@ -18,14 +18,7 @@ WORKDIR /rails
 
 # Install base packages
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libjemalloc2 libyaml-dev libvips postgresql-client gpg sudo
-
-# Add helm repo
-RUN curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg > /dev/null && \
-      sudo apt-get install apt-transport-https --yes && \
-      echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.gpg] https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
-RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y helm
+    apt-get install --no-install-recommends -y curl libjemalloc2 libyaml-dev libvips postgresql-client gpg
 
 RUN SUDO_FORCE_REMOVE=yes apt-get remove --yes sudo gpg && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
@@ -41,7 +34,7 @@ FROM base AS build
 
 # Install packages needed to build gems and node modules
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git libpq-dev zlib1g-dev pkg-config && \
+    apt-get install --no-install-recommends -y build-essential git libpq-dev zlib1g-dev pkg-config libffi-dev && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
 # Install JavaScript dependencies
