@@ -35,12 +35,11 @@ gem 'jbuilder'
 gem 'hiredis'
 gem 'redis', '~> 4.0'
 
-gem "solid_queue_dashboard", "~> 0.2.0"
+gem 'solid_queue_dashboard', '~> 0.2.0'
 # Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
-gem "solid_cache"
-gem "solid_queue"
-gem "solid_cable"
-
+gem 'solid_cable'
+gem 'solid_cache'
+gem 'solid_queue'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"

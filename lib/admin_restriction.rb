@@ -2,8 +2,10 @@
 
 # Copyright © 2023 Danil Pismenny <danil@brandymint.ru>
 
+# Ограничитель админского доступа для роутов
+#
 class AdminConstraint
   def self.matches?(request)
-    User.find_by_id(request.session[:user_id]).try &:superadmin?
+    User.find_by_id(request.session[:user_id]).try(&:superadmin?)
   end
 end

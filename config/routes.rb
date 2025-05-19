@@ -7,9 +7,9 @@ require 'admin_restriction'
 
 Rails.application.routes.draw do
   # TODO: constraint superadmin only
-  constraints subdomain: "admin" do
+  constraints subdomain: 'admin' do
     constraints AdminConstraint do
-      mount SolidQueueDashboard::Engine, at: "/solid-queue"
+      mount SolidQueueDashboard::Engine, at: '/solid-queue'
       scope module: :admin, as: :admin do
         resources :memberships
         resources :messages
