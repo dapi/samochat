@@ -104,4 +104,9 @@ Style/Copyright:
   AutocorrectNotice: "# Copyright © 2023 Danil Pismenny <danil@brandymint.ru>\n"
   Description: 'Include a copyright notice in each file before any code.'
   Enabled: true
+  Exclude:
+    - db/*
+    - config/*
+    - config/initializers/*
+    - bin/*
   # VersionAdded: '0.0.2'
