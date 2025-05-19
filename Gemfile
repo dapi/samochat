@@ -8,7 +8,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.4.2'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 7.0'
+gem 'rails', '~> 7.1'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
@@ -35,11 +35,11 @@ gem 'jbuilder'
 gem 'hiredis'
 gem 'redis', '~> 4.0'
 
-gem 'solid_queue_dashboard', '~> 0.2.0'
 # Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
 gem 'solid_cable'
 gem 'solid_cache'
 gem 'solid_queue'
+# gem 'solid_queue_dashboard', github: 'akodkod/solid-queue-dashboard'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -58,10 +58,10 @@ gem 'anyway_config'
 gem 'bootstrap', '~> 5.1.3'
 gem 'semver2', github: 'haf/semver'
 gem 'slim-rails'
-gem 'telegram-bot', github: 'telegram-bot-rb/telegram-bot'
+gem 'telegram-bot'
 
 gem 'draper'
-gem 'env-tweaks', github: 'yivo/env-tweaks', branch: 'dependabot/bundler/activesupport-7.0.4.1'
+# gem 'env-tweaks', github: 'yivo/env-tweaks', branch: 'dependabot/bundler/activesupport-7.0.4.1'
 gem 'simple_form'
 gem 'strip_attributes'
 
@@ -121,7 +121,9 @@ gem 'nanoid', '~> 2.0'
 
 gem 'validate_url', '~> 1.0'
 
-gem 'geocoder', '~> 1.8'
+# Пока отключил за ненадобностью
+#
+# gem 'geocoder', '~> 1.8'
 
 gem 'bugsnag', '~> 6.25'
 
@@ -130,11 +132,11 @@ gem 'dotenv-rails', require: 'dotenv/rails-now'
 
 gem 'russian', '~> 0.6.0'
 
-gem 'telegram-bot-types', '~> 0.7.0'
+gem 'telegram-bot-types'
 
 gem 'non-digest-assets', '~> 2.2'
 
-gem 'ransack', '~> 4.0'
+# gem 'ransack', '~> 4.0'
 
 gem 'kaminari', '~> 1.2'
 
@@ -162,4 +164,5 @@ gem 'benchmark', '~> 0.4.0'
 
 gem 'fiddle', '~> 1.1'
 
+gem 'activerecord-session_store'
 gem 'concurrent-ruby', '~> 1.3'

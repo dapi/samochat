@@ -29,4 +29,4 @@ Geocoder.configure(
   #   expiration: 2.days,
   #   prefix: 'geocoder:'
   # }
-)
+) if defined? Geocoder

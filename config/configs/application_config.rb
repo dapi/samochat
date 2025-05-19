@@ -11,9 +11,7 @@ class ApplicationConfig < Anyway::Config
     host: 'localhost',
     protocol: 'https',
     bot_token: '',
-    bot_username: '',
-    sidekiq_redis_url: 'redis://localhost:6379/0',
-    redis_cache_store_url: 'redis://localhost:6379/2'
+    bot_username: ''
   )
 
   class << self
