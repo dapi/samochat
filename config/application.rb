@@ -1,11 +1,9 @@
-# Copyright © 2023 Danil Pismenny <danil@brandymint.ru>
-
 # frozen_string_literal: true
 
+# Copyright © 2023 Danil Pismenny <danil@brandymint.ru>
+
 require_relative 'boot'
-
 ENV['RANSACK_FORM_BUILDER'] = '::SimpleForm::FormBuilder'
-
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
@@ -17,7 +15,10 @@ module Samochat
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
-    config.i18n.default_locale = :ru
+    # Please, add to the `ignore` list any other `lib` subdirectories that do
+    # not contain `.rb` files, or that should not be reloaded or eager loaded.
+    # Common ones are `templates`, `generators`, or `middleware`, for example.
+    config.autoload_lib(ignore: %w[assets tasks])
 
     # Configuration for the application, engines, and railties goes here.
     #

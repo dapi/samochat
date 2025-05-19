@@ -39,7 +39,7 @@ gem 'redis', '~> 4.0'
 gem 'solid_cable'
 gem 'solid_cache'
 gem 'solid_queue'
-# gem 'solid_queue_dashboard', github: 'akodkod/solid-queue-dashboard'
+gem 'solid_queue_dashboard', '~> 0.2'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"

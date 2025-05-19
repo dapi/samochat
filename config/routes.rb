@@ -6,10 +6,9 @@ require 'custom_telegram_bot_middleware'
 require 'admin_restriction'
 
 Rails.application.routes.draw do
-  # TODO: constraint superadmin only
-  constraints subdomain: 'admin' do
-    constraints AdminConstraint do
-      mount SolidQueueDashboard::Engine, at: '/solid-queue'
+  constraints subdomain: ENV.fetch('ADMIN_SUBDOMAIN', 'admin') do
+    constraints AdminRestriction do
+      mount SolidQueueDashboard::Engine, at: '/solid-queue' if defined? SolidQueueDashboard
       scope module: :admin, as: :admin do
         resources :memberships
         resources :messages

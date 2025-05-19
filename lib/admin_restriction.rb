@@ -4,7 +4,7 @@
 
 # Ограничитель админского доступа для роутов
 #
-class AdminConstraint
+class AdminRestriction
   def self.matches?(request)
     User.find_by_id(request.session[:user_id]).try(&:superadmin?)
   end
