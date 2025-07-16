@@ -8,7 +8,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.4.2'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 7.1'
+gem 'rails', '~> 8.0.2'
+gem "propshaft"
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
@@ -24,9 +25,6 @@ gem 'turbo-rails'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'stimulus-rails'
-
-# Build JSON APIs with ease [https://github.com/rails/jbuilder]
-gem 'jbuilder'
 
 # Use Redis adapter to run Action Cable in production
 gem 'hiredis'
@@ -129,14 +127,14 @@ gem 'russian', '~> 0.6.0'
 
 gem 'telegram-bot-types'
 
-gem 'non-digest-assets', '~> 2.2'
+# gem 'non-digest-assets', '~> 2.2'
 
 # gem 'ransack', '~> 4.0'
 
 gem 'kaminari', '~> 1.2'
 
-gem 'administrate', '~> 0.19.0'
-gem 'administrate-field-jsonb', '~> 0.4.6'
+# gem 'administrate', '~> 0.19.0'
+# gem 'administrate-field-jsonb', '~> 0.4.6'
 
 gem 'posthog-ruby', '~> 2.5'
 
@@ -160,4 +158,4 @@ gem 'fiddle', '~> 1.1'
 
 gem 'concurrent-ruby', '~> 1.3'
 
-gem 'sprockets-rails', '~> 3.5'
+# gem 'sprockets-rails', '~> 3.5'
