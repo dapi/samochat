@@ -39,6 +39,11 @@ _default: &_default
   url: <%= ENV['SAMOCHAT_DATABASE_URL'] %>
   <% end %>
 
+  size_estimate_samples: 1000
+  store_options: &default_store_options
+    max_age: <%= 60.days.to_i %>
+    namespace: <%= Rails.env %>
+
 development:
   primary: &development
     <<: *_default
@@ -72,6 +77,9 @@ production:
     <<: *production
     database: samochat_production_cache
     migrations_paths: db/cache_migrate
+    store_options:
+      <<: *default_store_options
+      max_entries: <%= Integer(ENV.fetch('SOLID_CACHE_MAX_ENTRIES_GB','4')).gigabytes %>
   queue:
     <<: *production
     database: samochat_production_queue

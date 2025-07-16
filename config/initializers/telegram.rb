@@ -2,7 +2,7 @@
 
 # frozen_string_literal: true
 
-Rails.application.config.telegram_updates_controller.session_store = :active_record_store, { key: '_samochat_session' }
+Rails.application.config.telegram_updates_controller.session_store = :solid_cache_store
 
 Telegram.bots_config = {
   default: {

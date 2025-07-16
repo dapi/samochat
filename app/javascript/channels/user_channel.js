@@ -1,4 +1,4 @@
-import consumer from "channels/consumer"
+// import consumer from "./consumer"
 
 const createSubscription = () {
   consumer.subscriptions.create("UserChannel", {

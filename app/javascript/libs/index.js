@@ -2,4 +2,4 @@
 //
 // This kind does not work: (404)
 // import "./projects_channel"
-import "libs/clipboard"
+import "./clipboard"

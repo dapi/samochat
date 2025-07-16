@@ -6,7 +6,6 @@ class TelegramControllerTestCase < ActiveSupport::TestCase
   setup do
     @bot = Telegram.bot
     @described_class = Telegram::WebhookController
-    @described_class.session_store&.clear if @described_class.respond_to?(:session_store)
     # route_name = Telegram::Bot::RoutesHelper.route_name_for_bot(@bot)
     # @controller_path = Rails.application.routes.url_helpers.public_send("#{route_name}_path")
     # @object = Class.new

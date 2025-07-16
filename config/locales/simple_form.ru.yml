@@ -7,7 +7,7 @@ ru:
     hints:
       project:
         url: 'Например https://www.ru'
-        custom_username: 'Например: "nuichat.ru: Чем вам помочь?"'
+        custom_username: 'Например: "samochat.ru: Чем вам помочь?"'
         name: 'Например: Интернет-магазин "У Дома"'
         thread_on_start: Так Вы получаете контакт с пользователем даже если он ничего не написал
         bot_token: 'Например: 123456789:A2FVQ21DjgnKCzIAbAPw9rUX3C13dHGT2ME'
@@ -22,7 +22,7 @@ ru:
     placeholders:
       project:
         url: 'https://..'
-        custom_username: nuichat.ru
+        custom_username: samochat.ru
     required:
       mark: "*"
       text: обязательное поле

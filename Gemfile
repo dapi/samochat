@@ -10,9 +10,6 @@ ruby '3.4.2'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.1'
 
-# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem 'sprockets-rails'
-
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 
@@ -39,7 +36,7 @@ gem 'redis', '~> 4.0'
 gem 'solid_cable'
 gem 'solid_cache'
 gem 'solid_queue'
-gem 'solid_queue_dashboard', '~> 0.2'
+gem 'solid_queue_dashboard'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -55,7 +52,6 @@ gem 'bootsnap', require: false
 
 gem 'active_link_to'
 gem 'anyway_config'
-gem 'bootstrap', '~> 5.1.3'
 gem 'semver2', github: 'haf/semver'
 gem 'slim-rails'
 gem 'telegram-bot'
@@ -66,8 +62,9 @@ gem 'simple_form'
 gem 'strip_attributes'
 
 gem 'request_store'
-# Use Sass to process CSS
-gem 'sassc-rails'
+
+# Bundle and process CSS [https://github.com/rails/cssbundling-rails]
+gem 'cssbundling-rails'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -121,9 +118,7 @@ gem 'nanoid', '~> 2.0'
 
 gem 'validate_url', '~> 1.0'
 
-# Пока отключил за ненадобностью
-#
-# gem 'geocoder', '~> 1.8'
+gem 'geocoder', '~> 1.8'
 
 gem 'bugsnag', '~> 6.25'
 
@@ -141,7 +136,6 @@ gem 'non-digest-assets', '~> 2.2'
 gem 'kaminari', '~> 1.2'
 
 gem 'administrate', '~> 0.19.0'
-
 gem 'administrate-field-jsonb', '~> 0.4.6'
 
 gem 'posthog-ruby', '~> 2.5'
@@ -164,5 +158,6 @@ gem 'benchmark', '~> 0.4.0'
 
 gem 'fiddle', '~> 1.1'
 
-gem 'activerecord-session_store'
 gem 'concurrent-ruby', '~> 1.3'
+
+gem 'sprockets-rails', '~> 3.5'

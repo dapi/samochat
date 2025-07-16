@@ -1,23 +1,26 @@
 {
-  "name": "samochat",
-  "version": "1.0.0",
-  "description": "[![Ruby on Rails CI](https://github.com/dapi/telik/actions/workflows/rubyonrails.yml/badge.svg)](https://github.com/dapi/telik/actions/workflows/rubyonrails.yml) [![Deploy](https://github.com/dapi/telik/actions/workflows/deploy.yml/badge.svg)](https://github.com/dapi/telik/actions/workflows/deploy.yml)",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib",
-    "test": "test"
-  },
+  "name": "app",
+  "private": "true",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:css:compile": " ./node_modules/.bin/sass ./app/assets/stylesheets/application.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
+    "build:css:prefix": "postcss ./app/assets/builds/application.css --use=autoprefixer --output=./app/assets/builds/application.css",
+    "build:css": "yarn build:css:compile && yarn build:css:prefix",
+    "watch:css": "nodemon --watch ./app/assets/stylesheets/ --ext scss --exec \"yarn build:css\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dapi/samochat.git"
+  "browserslist": [
+    "defaults"
+  ],
+  "devDependencies": {
+    "@popperjs/core": "^2.11.8",
+    "autoprefixer": "^10.4.21",
+    "nodemon": "^3.1.10",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "yarn": "^1.22.22"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dapi/samochat/issues"
-  },
-  "homepage": "https://github.com/dapi/samochat#readme"
+  "dependencies": {
+    "bootstrap": "^5.3.6",
+    "bootstrap-icons": "^1.13.1",
+    "sass": "^1.89.2"
+  }
 }
