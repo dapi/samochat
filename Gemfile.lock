@@ -227,18 +227,6 @@ GEM
       reline (>= 0.4.2)
     json (2.6.3)
     jwt (2.7.0)
-    kaminari (1.2.2)
-      activesupport (>= 4.1.0)
-      kaminari-actionview (= 1.2.2)
-      kaminari-activerecord (= 1.2.2)
-      kaminari-core (= 1.2.2)
-    kaminari-actionview (1.2.2)
-      actionview
-      kaminari-core (= 1.2.2)
-    kaminari-activerecord (1.2.2)
-      activerecord
-      kaminari-core (= 1.2.2)
-    kaminari-core (1.2.2)
     listen (3.8.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -525,7 +513,6 @@ DEPENDENCIES
   guard-shell (~> 0.7.2)
   hiredis
   importmap-rails
-  kaminari (~> 1.2)
   listen
   logger (~> 1.7)
   mutex_m (~> 0.3.0)
