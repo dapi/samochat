@@ -75,5 +75,8 @@ lsp:
 	gem install --user-install ruby-lsp
 	gem install --user-install solargraph
 
+build_widget:
+	WIDGET_NAME=sampochat cat app/javascript/button-widget.js.erb | envsubst > app/javascript/button-widget.js
+
 sql:
 	psql ${PRODUCTION_DATABASE_URL}

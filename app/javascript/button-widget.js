@@ -1,15 +1,15 @@
 
 (function(window) {
-if (!window.${WIDGET_NAME}) { window.${WIDGET_NAME}Widget = {}; }
+if (!window.) { window.Widget = {}; }
 
-  var projectKeyAttribute = 'data-${WIDGET_NAME}-pk';
-  var widgetElId = "${WIDGET_NAME}-button-widget";
-  var widgetCssClass = "${WIDGET_NAME}-button-widget";
+  var projectKeyAttribute = 'data--pk';
+  var widgetElId = "-button-widget";
+  var widgetCssClass = "-button-widget";
 
   function getAllWidgets() {
     var widgets = [];
     if (document.querySelectorAll) {
-      widgets = document.querySelectorAll(`script[${projectKeyAttribute}]`);
+      widgets = document.querySelectorAll(`script[]`);
     } else {
       widgets = Array.prototype.slice.apply(document.getElementsByTagName('SCRIPT'));
     }
@@ -17,18 +17,18 @@ if (!window.${WIDGET_NAME}) { window.${WIDGET_NAME}Widget = {}; }
   }
 
   function insertStyles() {
-  var stylesId = "${WIDGET_NAME}-button-widget-styles";
+  var stylesId = "-button-widget-styles";
     if (document.getElementById(stylesId)) { return };
     const style = document.createElement("style");
     style.id = stylesId;
-    style.textContent = `.${widgetCssClass} { 
+    style.textContent = `. { 
     position:fixed;
     bottom:0;left:0;
     margin:1em;
     background:none;
     z-index:9999;
     transition:all 0.3s ease;
-    animation: ${WIDGET_NAME}-widget-popup ease 0.3s;
+    animation: -widget-popup ease 0.3s;
     // opacity:0;
     transform: scale(1);
     &:hover { 
@@ -36,14 +36,14 @@ if (!window.${WIDGET_NAME}) { window.${WIDGET_NAME}Widget = {}; }
       transform: scale(1.05);
      }
     }
-    .${widgetCssClass} > img {
+    . > img {
       border-radius: 50%;
       box-shadow: 5px 6px 35px -7px rgba(34, 60, 80, 0.41);;
      }
-    .${widgetCssClass}:hover > img {
+    .:hover > img {
       box-shadow: 5px 6px 45px -7px rgba(34, 60, 80, 0.41);
      }
-     @keyframes ${WIDGET_NAME}-widget-popup {
+     @keyframes -widget-popup {
       0%{ transform: scale(1); opacity: 0.3; }
       50%{ transform: scale(0.9); opacity: 1; }
       100%{ transform: scale(1); opacity: 0.9 }
@@ -58,7 +58,7 @@ if (!window.${WIDGET_NAME}) { window.${WIDGET_NAME}Widget = {}; }
     if (!widgetEl.tagName || !(widgetEl.tagName.toUpperCase() == 'SCRIPT')) {
       return null;
     }
-    if (window.${WIDGET_NAME}Widget.widgetEl && document.getElementById(widgetElId)) {
+    if (window.Widget.widgetEl && document.getElementById(widgetElId)) {
       return true;
     }
 
@@ -66,7 +66,7 @@ if (!window.${WIDGET_NAME}) { window.${WIDGET_NAME}Widget = {}; }
     if (widgetProjectKey = (widgetEl.getAttribute(projectKeyAttribute) || widgetEl.getAttribute('data-pk'))) {
       var a = document.createElement('A');
 
-      console.log('Create ${WIDGET_NAME} button widget');
+      console.log('Create  button widget');
       a.id = widgetElId;
       a.setAttribute('title', widgetEl.getAttribute('data-title') || "Нажмите чтобы связаться с оператором");
       a.setAttribute('target', '_blank');
@@ -88,9 +88,9 @@ if (!window.${WIDGET_NAME}) { window.${WIDGET_NAME}Widget = {}; }
       a.appendChild(img);
       document.body.appendChild(a);
     } else {
-      console.log(`Nuichat widget script has no "${projectKeyAttribute}" attribute. Initialization canceled..`);
+      console.log(`Nuichat widget script has no "" attribute. Initialization canceled..`);
     }
-    window.${WIDGET_NAME}Widget.widgetEl = widgetEl;
+    window.Widget.widgetEl = widgetEl;
     return true;
   }
 

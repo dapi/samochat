@@ -9,10 +9,6 @@ module WidgetHelper
     ApplicationConfig.app_title.downcase
   end
 
-  def widget_window_object
-    widget_namespace.camelize + 'Widget'
-  end
-
   def widget_escape_param(value)
     if value == EXAMPLE_CODE
       value
