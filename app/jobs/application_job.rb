@@ -4,6 +4,9 @@
 
 # Базовый класс job-ов
 class ApplicationJob < ActiveJob::Base
+
+  self.enqueue_after_transaction_commit = true
+
   Retry = Class.new StandardError
 
   # Automatically retry jobs that encountered a deadlock

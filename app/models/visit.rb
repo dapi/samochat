@@ -12,7 +12,7 @@ class Visit < ApplicationRecord
 
   belongs_to :visitor_session
   has_one :visitor, through: :visitor_session
-  has_one :project, through: :visitor_session
+  has_one :project, through: :visitor
 
   scope :with_visitor, -> { joins(:visitor_session).where.not(visitor_sessions: { visitor_id: nil }) }
   scope :without_visitor, -> { joins(:visitor_session).where(visitor_sessions: { visitor_id: nil }) }

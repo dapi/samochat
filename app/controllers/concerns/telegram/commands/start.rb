@@ -36,11 +36,7 @@ module Telegram
       end
 
       def start_client_visit!(visit)
-        visit.visitor_session.with_lock do
-          visit.visitor_session.update! visitor: find_or_create_visitor(visit.visitor_session.project) if visit.visitor_session.visitor_id.nil?
-          visit.reload # Чтобы появился visit.visitor
-        end
-
+        visit.visitor_session.update! visitor: find_or_create_visitor(visit.visitor_session.project) if visit.visitor_session.visitor_id.nil?
         session[:project_id] = visit.project.id
         RegisterVisitJob.perform_later(visit:, chat:)
         text = WelcomeMessageBuilder.new(visit).build

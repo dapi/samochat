@@ -9,22 +9,22 @@ Rails.application.routes.draw do
   constraints subdomain: ENV.fetch('ADMIN_SUBDOMAIN', 'admin') do
     constraints AdminRestriction do
       mount SolidQueueDashboard::Engine, at: '/solid-queue' if defined? SolidQueueDashboard
-      #if defined? Administrate do
-        #scope module: :admin, as: :admin do
-          #resources :memberships
-          #resources :messages
-          #resources :projects
-          #resources :tariffs
-          #resources :telegram_events
-          #resources :telegram_users
-          #resources :users
-          #resources :visits
-          #resources :visitors
-          #resources :visitor_sessions
+      # if defined? Administrate do
+      # scope module: :admin, as: :admin do
+      # resources :memberships
+      # resources :messages
+      # resources :projects
+      # resources :tariffs
+      # resources :telegram_events
+      # resources :telegram_users
+      # resources :users
+      # resources :visits
+      # resources :visitors
+      # resources :visitor_sessions
 
-          #root to: 'memberships#index'
-        #end
-      #end
+      # root to: 'memberships#index'
+      # end
+      # end
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

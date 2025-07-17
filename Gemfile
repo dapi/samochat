@@ -8,8 +8,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.4.2'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem 'propshaft'
 gem 'rails', '~> 8.0.2'
-gem "propshaft"
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
@@ -159,3 +159,5 @@ gem 'fiddle', '~> 1.1'
 gem 'concurrent-ruby', '~> 1.3'
 
 # gem 'sprockets-rails', '~> 3.5'
+
+gem 'rails-i18n', '~> 8.0'

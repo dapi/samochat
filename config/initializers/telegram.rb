@@ -2,7 +2,11 @@
 
 # frozen_string_literal: true
 
-Rails.application.config.telegram_updates_controller.session_store = :solid_cache_store
+if Rails.env.test?
+  Rails.application.config.telegram_updates_controller.session_store = :file_store, Rails.root.join('tmp', 'sessions')
+else
+  Rails.application.config.telegram_updates_controller.session_store =  :solid_cache_store
+end
 
 Telegram.bots_config = {
   default: {

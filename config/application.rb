@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# Copyright © 2023 Danil Pismenny <danil@brandymint.ru>
-
 require_relative 'boot'
 ENV['RANSACK_FORM_BUILDER'] = '::SimpleForm::FormBuilder'
 require 'rails/all'
@@ -19,7 +17,10 @@ module Samochat
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w[assets tasks])
+
     config.action_dispatch.tld_length = Rails.env.test? ? 1 : Integer(ENV['TLD_LENGTH'] || 1)
+
+    config.i18n.default_locale = :ru
 
     # Configuration for the application, engines, and railties goes here.
     #
