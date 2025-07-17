@@ -1,7 +1,0 @@
-:verbose: true
-# Set timeout to 8 on Heroku, longer if you manage your own systems.
-:timeout: 300
-:queues:
-  - [critical, 256]
-  - [default, 64]
-  - [low, 1]
