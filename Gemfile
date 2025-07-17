@@ -159,3 +159,5 @@ gem 'concurrent-ruby', '~> 1.3'
 # gem 'sprockets-rails', '~> 3.5'
 
 gem 'rails-i18n', '~> 8.0'
+
+gem "kaminari", "~> 1.2"
